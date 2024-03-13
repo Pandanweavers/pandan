@@ -1,0 +1,717 @@
+/* Importing Google font - Poppins */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+/* styles for BODY */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* styles for HEADER */
+header {
+  background:#ffffff;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 5px;
+  z-index: 1000; /* Set a high z-index value to ensure it's on top */
+}
+
+
+/* styles for NAVBAR */
+header .navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+
+.navbar .logo {
+  height: auto;
+  left: 0px;
+  margin-left: 20px;
+  margin-right: 10px;
+  width: 100px;
+  border-radius: 50px;
+}
+
+.navbar .title {
+  color: #5EA047;
+  margin-right: 450px;
+  font-family: 'Times New Roman', Times, serif;
+}
+
+.navbar .logo span {
+  color: #6B7C65;
+}
+
+.navbar .menu-links{
+  background: #5EA047;
+  display: flex;
+  list-style: none;
+  margin-right: 100px;
+}
+
+.navbar .menu-links a {
+  background: rgba(255, 0, 0, 0); /* Transparent background color */
+  color: #5EA047;
+  text-decoration: none; /* Remove default underline */
+  margin-left: 70px;
+}
+
+.navbar .menu-links {
+  background: #6b7c6500;
+  border: none;
+  font-size: 1rem;
+  cursor: pointer;
+  font-weight: 500;
+  position: relative;
+  transition: 0.2s ease;
+  
+}
+
+  .navbar .menu-links a.active {
+    color: #5EA047;
+  }
+
+  .navbar .menu-links a:hover {
+    color: #5EA047;
+  }
+
+  .navbar .menu-links a::after {
+    content: '';
+    height: 2px;
+    width: 0; /* Initially set width to 0 */
+    background: #5EA047;
+    display: block;
+    transition: width 0.3s ease; /* Add transition for smooth effect */
+  }
+
+  .navbar .menu-links a:hover::after,
+.navbar .menu-links a.active::after {
+  width: 100%;
+}
+
+.navbar input {
+  margin-left: 200px;
+  margin-top: 5px;
+  border-radius: 20px;
+  padding: 10px 40px;
+}
+
+/* styles for SECTION */
+.hero-section {
+  height: 100vh;
+  background-position: center;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  padding: 0 20px;
+}
+/* styles for HOME SECTION */
+.hero-section .content-home {
+  max-width: 0%;
+  width: 100%;
+  color: #000000;
+  margin-left: 800px;
+}
+
+.hero-section .content-home h1 {
+  color: #5EA047;
+  font-size: 5rem;
+  max-width: 600px;
+  line-height: 70px;
+    letter-spacing: 5px;
+  font-family: 'Times New Roman', Times, serif;
+}
+
+.hero-section .content-home p {
+  font-weight: 300;
+  max-width: 600px;
+  margin-top: 15px;
+}
+
+.hero-section .content-home button {
+  border: 1px solid #A6A6A6;
+  background: #5EA047;
+  color: #fff;
+  padding: 5px 50px;
+  font-size: 1rem;
+  border-radius: 20px;
+  margin-top: 20px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: 0.2s ease;
+}
+
+.hero-section .content-home button:hover {
+  color: #fff;
+  background: #6B7C65;
+}
+
+.hero-section .content-home .ba-button {
+  font-family: 'Times New Roman', Times, serif;
+  white-space: nowrap;
+}
+
+#home {
+
+  background-image: url(../img/home_bg.png)
+  
+}
+
+/* styles for BOOK APPOINTMENT POPUP */
+.book-appointment-popup {
+  position: fixed;
+  top: -150%;
+  left: 50%;
+  opacity: 0;
+  transform: translate(-50%,-50%) scale(1.25);
+  width: 600px;
+  padding: 20px 30px;
+  background: #ffffff;
+  z-index: 1000;
+  border-radius: 20px;
+  border: 1px solid #5EA047;
+  transition: top 0ms ease-in-out 200ms,
+              opacity 200ms ease-in-out 0ms,
+              transform 200ms ease-in-out 0ms;
+}
+
+.book-appointment-popup h1{
+  font-family: 'Times New Roman', Times, serif;
+  color: #5EA047;
+  margin-bottom: 10px;
+}
+
+.book-appointment-popup.active {
+  top: 50%;
+  opacity: 1;
+  transform: translate(-50%,-50%) scale(1);
+  transition: top 0ms ease-in-out 0ms,
+  opacity 200ms ease-in-out 0ms,
+  transform 200ms ease-in-out 0ms;
+}
+
+.book-appointment-popup .ba-close-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 15px;
+  height: 15px;
+  background: #888;
+  color: #eee;
+  text-align: center;
+  line-height: 15px;
+  border-radius: 15px;
+  cursor: pointer;
+}
+
+.book-appointment-popup .book-appointment-form {
+  margin-top: 0px;
+}
+
+.book-appointment-popup .book-appointment-form .enter-name {
+  background: #ffffff;
+  display: flex;
+  margin-bottom: -10px;
+}
+
+.book-appointment-popup .book-appointment-form .enter-name .form-element label {
+  font-size: 14px;
+  color: #222;
+}
+
+.book-appointment-popup .book-appointment-form .enter-name .form-element input {
+  display: block;
+  width: 166px;
+  padding: 10px;
+  outline: none;
+  border: 1px solid #aaa;
+  border-radius: 5px;
+}
+
+.book-appointment-popup .book-appointment-form .enter-contactno {
+  background: #ffffff;
+  display: flex;
+  margin-bottom: -10px;
+}
+
+.book-appointment-popup .book-appointment-form .enter-contactno .form-element label {
+  font-size: 14px;
+  color: #222;
+}
+
+.book-appointment-popup .book-appointment-form .enter-contactno .form-element input {
+  display: block;
+  width: 166px;
+  padding: 10px;
+  outline: none;
+  border: 1px solid #aaa;
+  border-radius: 5px;
+}
+
+.book-appointment-popup .book-appointment-form .date-time {
+  background: #ffffff;
+  display: flex;
+  margin-bottom: -10px;
+}
+
+.book-appointment-popup .book-appointment-form .date-time .form-element label {
+  font-size: 14px;
+  color: #222;
+}
+
+.book-appointment-popup .book-appointment-form .date-time .form-element input {
+  display: block;
+  width: 166px;
+  padding: 10px;
+  outline: none;
+  border: 1px solid #aaa;
+  border-radius: 5px;
+}
+
+.book-appointment-popup .book-appointment-form .button-submit button {
+  background: #5EA047;
+  width:540px;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.book-appointment-popup .book-appointment-form .book-appointment-submit button:hover {
+}
+
+.form-element {
+  margin-right: 20px;
+}
+
+/* Styles for ABOUT SECTION */
+.hero-section .content-about-1 {
+  background: #5fa04700;
+  padding: 1px 30px 30px; /* Adjusted padding for responsiveness */
+  margin-left: 50px;
+  margin-right: 50px;
+  margin-top: 50px;
+  text-align: center;
+}
+
+.hero-section .content-about-1 .about-infos-1 {
+  color: #000000;
+  background: #ffffff00;
+  padding: 0px 10px; /* Adjusted padding for responsiveness */
+  display: flex;
+}
+
+.hero-section .content-about-1 .about-infos-1 .about-img-1 {
+  background: #6b7c6500;
+  margin-right: 20px;
+}
+
+.hero-section .content-about-1 .about-infos-1 .about-img-1 img {
+  margin-top: 10px;
+  height: auto;
+  width: 400px;
+}
+
+.hero-section .content-about-1 .about-infos-1 .about-infos-1 {
+  margin-top: 20px;
+  color: #000000; /* Adjusted text color for better visibility on black background */
+  background: #ffffff00;
+  font-size: medium;
+  text-align: justify;
+  text-indent: 50px;
+}
+
+.hero-section .content-about-1 h1 {
+  margin: 0;
+  margin-bottom: 20px;
+  color: #5EA047;
+  letter-spacing: 5px;
+  font-size: 3rem;
+  font-family: 'Times New Roman', Times, serif;
+}
+
+.hero-section .content-about-2 {
+  background: #5fa04700;
+  padding: 1px 30px 30px; /* Adjusted padding for responsiveness */
+  margin-left: 50px;
+  margin-right: 50px;
+  margin-top: 50px;
+  text-align: center;
+}
+
+.hero-section .content-about-2 .about-infos-2 {
+  color: #000000;
+  background: #ffffff00;
+  padding: 0px 10px; /* Adjusted padding for responsiveness */
+  display: flex;
+}
+
+.hero-section .content-about-2 .about-infos-2 .about-img-2 {
+  background: #6b7c6500;
+}
+
+.hero-section .content-about-2 .about-infos-2 .about-img-2 img {
+  margin-top: 10px;
+  height: auto;
+  width: 400px;
+}
+
+.hero-section .content-about-2 .about-infos-2 .about-infos-2 {
+  margin-top: 20px;
+  color: #000000; /* Adjusted text color for better visibility on black background */
+  background: #ffffff00;
+  font-size: medium;
+  text-align: justify;
+  margin-right: 20px;
+  text-indent: 50px;
+}
+
+.hero-section .content-about-2 h1 {
+  margin: 0;
+  margin-bottom: 20px;
+  color: #5EA047;
+  letter-spacing: 5px;
+  font-size: 3rem;
+  font-family: 'Times New Roman', Times, serif;
+}
+
+.hero-section .content-about-2 .about-infos-2 .about-infos-2 .about-2-h1  {
+  margin: 0;
+  margin-bottom: 20px;
+  color: #5EA047;
+  letter-spacing: 5px;
+  font-size: 2rem;
+  font-family: 'Times New Roman', Times, serif;
+  text-align: left;
+}
+
+#about {
+
+  background-image: url(../img/about_bg.png)
+  
+}
+
+/* Styles for PRODUCTS SECTION */
+.hero-section .content-products-1 {
+  background: #00bfff00;
+  padding: 1px 30px 30px; /* Adjusted padding for responsiveness */
+  margin-left: 300px;
+  margin-right: 50px;
+  margin-top: 50px;
+  text-align: center;
+}
+
+.hero-section .content-products-1 .products-infos-1 {
+  color: #000000;
+  position: relative;
+  display: flex;
+}
+
+.hero-section .content-products-1 .products-infos-1 .products-img-first .products-img-big {
+  width: 800px;
+}
+.hero-section .content-products-1 .products-infos-1 .products-weavers {
+  background: #ffffff;
+  padding: 50px;
+  position: absolute;
+  right: 150px;
+  left: 150px;
+  bottom: -60px;
+  border: 2px solid #5EA047; /* Add a 2px solid black border */
+}
+
+
+.hero-section .content-products-1 .products-infos-1 .products-weavers h1 {
+  font-size: 2rem;
+}
+
+.hero-section .content-products-1 .products-infos-1 .products-img-1 img {
+  height: auto;
+  width: 400px;
+}
+
+.hero-section .content-products-1 .products-infos-1 .products-infos-1 {
+  margin-top: 20px;
+  color: #000000; /* Adjusted text color for better visibility on black background */
+  background: #e5ff00;
+  font-size: medium;
+  text-align: justify;
+  text-indent: 50px;
+}
+
+.hero-section .content-products-1 h1 {
+  margin: 0;
+  margin-bottom: 20px;
+  color: #5EA047;
+  letter-spacing: 5px;
+  font-size: 3rem;
+  font-family: 'Times New Roman', Times, serif;
+}
+
+.hero-section .content-products-2 {
+  background: #00bfff;
+  padding: 1px 30px 30px; /* Adjusted padding for responsiveness */
+  margin-left: 220px;
+  margin-right: 50px;
+  margin-top: 50px;
+  text-align: center;
+}
+
+.hero-section .content-products-2 .products-infos-2 {
+  color: #000000;
+  background: #ff0000;
+  padding: 0px 10px; /* Adjusted padding for responsiveness */
+  display: flex;
+}
+
+.hero-section .content-products-2 .products-infos-2 .products-img-2 {
+  background: #ff00ff;
+  margin: 10px;
+  position: relative;
+}
+
+.hero-section .content-products-2 .products-infos-2 .products-img-2 .left-pic {
+  margin-top: 10px;
+  height: auto;
+  width: 300px;
+  bottom: -200px;
+  right: -200px;
+  position: absolute;
+}
+
+.hero-section .content-products-2 .products-infos-2 .products-img-2 .middle-pic {
+  margin-top: 10px;
+  height: auto;
+  width: 400px;
+  bottom: -240px;
+  right: -650px;
+  position: absolute;
+}
+
+.hero-section .content-products-2 .products-infos-2 .products-img-2 .right-pic {
+  margin-top: 10px;
+  height: auto;
+  width: 300px;
+  bottom: -200px;
+  left: 700px;
+  position: absolute;
+}
+
+.hero-section .content-products-2 .products-infos-2 .products-infos-2 {
+  margin-top: 20px;
+  color: #000000; /* Adjusted text color for better visibility on black background */
+  background: #e5ff00;
+  font-size: medium;
+  text-align: justify;
+  text-indent: 50px;
+}
+
+.hero-section .content-products-2 h1 {
+  margin: 0;
+  margin-bottom: 20px;
+  color: #5EA047;
+  letter-spacing: 5px;
+  font-size: 3rem;
+  font-family: 'Times New Roman', Times, serif;
+}
+
+.hero-section .content-products-3 {
+  padding: 1px 30px 30px; /* Adjusted padding for responsiveness */
+  margin-left: 100px;
+  margin-top: 725px;
+  text-align: center;
+}
+
+.hero-section .content-products-3 .products-infos-3 {
+  color: #000000;
+  padding: 0px 10px; /* Adjusted padding for responsiveness */
+  display: flex;
+}
+
+.hero-section .content-products-3 .products-infos-3 .products-img-3 img {
+  margin: 50px;
+  height: auto;
+  width: 300px;
+}
+
+.hero-section .content-products-3 .products-infos-3 .products-infos-3 {
+  margin-top: 20px;
+  color: #000000; /* Adjusted text color for better visibility on black background */
+  background: #e5ff00;
+  font-size: medium;
+  text-align: justify;
+  text-indent: 50px;
+}
+
+.hero-section .content-products-3 h1 {
+  margin: 0;
+  margin-bottom: 20px;
+  color: #5EA047;
+  letter-spacing: 5px;
+  font-size: 3rem;
+  font-family: 'Times New Roman', Times, serif;
+}
+
+#products {
+
+  background-image: url(../img/products_bg.png)
+  
+}
+#tutorial {
+
+  background-image: url(../img/about_bg.png)
+  
+}
+
+
+/* styles for MEMBERSHIP SECTION */
+.hero-section .content-membership {
+  width: 680px;
+  margin-top: 100px;
+  margin-left: 430px;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  border: 1px solid #5EA047;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.hero-section .content-membership .membership-form .form-element {
+  margin-bottom: 5px;
+}
+
+.hero-section .content-membership .h2 {
+  font-family: 'Times New Roman', Times, serif;
+  color: #5EA047;
+  margin-bottom: 10px;
+}
+
+.hero-section .content-membership .enter-name {
+  display: flex;
+  max-width: 600px;
+  background-color: #ffffff00;
+  border-radius: 8px;
+}
+
+.hero-section .content-membership .date-time-1 {
+  display: flex;
+  max-width: 600px;
+  background-color: #ffffff00;
+  border-radius: 8px;
+}
+
+.hero-section .content-membership .date-time-2 {
+  display: flex;
+  max-width: 600px;
+  background-color: #ffffff00;
+  border-radius: 8px;
+}
+
+.hero-section .content-membership h4 {
+  text-align: left;
+  color: #333;
+}
+
+.form-element {
+  margin-right: 20px;
+}
+
+.form-element label {
+  display: block;
+  font-weight: lighter;
+  color: #555;
+  margin-bottom: 5px;
+}
+
+.enter-name .form-element input {
+  padding: 5px;
+  width: 200px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.enter-address .form-element input {
+  padding: 5px;
+  width: 640px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.enter-birthday .form-element input {
+  padding: 5px;
+  width: 640px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.enter-contactno .form-element input {
+  padding: 5px;
+  width: 640px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.enter-nilala .form-element select {
+  padding: 5px;
+  width: 640px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.enter-registration .form-element input {
+  padding: 5px;
+  width: 640px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-bottom: 10px;
+}
+
+.membership-submit .form-element button {
+  padding: 5px;
+  color: #fff;
+  width: 640px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background: #5EA047;
+}
+
+#membership {
+
+  background-image: url(../img/about_bg.png)
+  
+}
+
+/* FOOTER STYLING */
+.footer {
+  background-color: #333;
+  color: #fff;
+  padding: 20px 0;
+  text-align: center;
+}
+
+.footer-text {
+  font-size: 16px;
+}
+
+.footer .container .icons{
+  display: flex;
+  justify-content: center;
+}
+
+.footer .container .icons a {
+  text-decoration: none;
+  color: rgb(255, 255, 255);
+  border-radius: 50%;
+  font-size: 20px;
+  margin: 10px;
+}
+
+
